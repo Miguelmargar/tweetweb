@@ -1,6 +1,6 @@
 from flask import *
 import os
-from tweets import search
+from tweets import search_tweets
 
 app = Flask(__name__)
 
@@ -9,11 +9,10 @@ def get_index():
     return render_template("index.html")
 
 @app.route("/results")
-
 def get_results():
-    search  = request.form['search'] 
-    number  = request.form['number'] 
-    tweets  = search(search,number)
+    search  = request.args.get('search')
+    number  = int(request.args.get('number'))
+    tweets  = search_tweets(search,number)
     return render_template("results.html", tweets = tweets )
 
 
