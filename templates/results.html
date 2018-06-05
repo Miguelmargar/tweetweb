@@ -7,16 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-    
-    <h1>Tweet 1</h1>
-    <ul>
-        <li>Tweet :</li>
-        <li>User screen's name:</li>
-        <li>#</li>
-        <li>Date:</li>
-        <li>User's followers:</li>
-        <li>User's friends:</li>
-    </ul>
-    
+   {% for tweet in tweets %} 
+    <a href="https://twitter.com/statuses/{{ tweet.id }}">{{ tweet.text }}</a>
+    {% endfor %}
 </body>
 </html>

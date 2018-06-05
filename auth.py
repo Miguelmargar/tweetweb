@@ -3,6 +3,7 @@ import json
 import tweepy
 from tweepy import OAuthHandler
 
+#the below keys have been included in the bashrc file in the hidden and home favourites.
 CONSUMER_KEY = os.environ.get("CONSUMER_KEY")
 CONSUMER_SECRET = os.environ.get("CONSUMER_SECRET")
 OAUTH_TOKEN = os.environ.get("OAUTH_TOKEN")
