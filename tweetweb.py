@@ -9,11 +9,13 @@ def get_index():
     return render_template("index.html")
 
 @app.route("/results")
-def results():
+
+def get_results():
     search  = request.form['search'] 
     number  = request.form['number'] 
     tweets  = search(search,number)
     return render_template("results.html", tweets = tweets )
+
 
 if __name__ == '__main__':
     app.run(host=os.getenv('IP', '0.0.0.0'), port=int(os.getenv('PORT', 8080)), debug=True)
